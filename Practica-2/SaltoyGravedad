@@ -7,31 +7,46 @@ pygame.display.set_caption("Práctica 2 - Saltos")
 x, y = 300, 300
 vel_y = 0
 gravedad = 1
-en_suelo = True
+saltos = 2
+presion = False  
 clock = pygame.time.Clock()
 running = True
 
 while running:
     clock.tick(60)
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    teclas = pygame.key.get_pressed()
-    if teclas[pygame.K_SPACE] and en_suelo:
-        vel_y = -5
-        en_suelo += False
+        # Detectar cuando se PRESIONA espacio una sola vez
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE and saltos > 0:
+                vel_y = -15
+                saltos -= 1
+                presion = True
 
+        # Detectar cuando se SUELTA la tecla
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_SPACE:
+                presion = False
+
+    # Movimiento
     y += vel_y
     vel_y += gravedad
 
+    # Suelo
     if y >= 300:
         y = 300
         vel_y = 0
-        en_suelo = True
+        saltos = 2
+    #suelo 
+    
 
     pantalla.fill((50, 50, 100))
     pygame.draw.rect(pantalla, (255, 255, 0), (x, y, 40, 40))
+    pygame.draw.rect(pantalla, (0, 255, 0), (0, 340, 600, 60))
+
     pygame.display.update()
 
 pygame.quit()
