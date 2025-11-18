@@ -54,3 +54,8 @@ while running:
 pygame.quit()
 
 ```
+
+notas de juego 
+el jugador se mueve con las flechas hacia frente y atras para saltar es el espacio,
+para cambiar la direcion de la bala es con las teclas A {atras}, D{a frente}, W{arriba}, S{abajo},
+f{dispara}
