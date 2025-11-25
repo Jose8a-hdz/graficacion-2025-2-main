@@ -74,11 +74,19 @@ Cambia el tamaño del personaje y ajusta FRAME_ANCHO / FRAME_ALTO.
 
 - ¿Qué función usamos para recortar una parte del sprite sheet?
 
+surf.face.subsurf.face
+
 - ¿Cómo controlamos la velocidad de animación?
+
+click.tick
 
 - ¿Por qué usamos un diccionario de animaciones en lugar de una sola lista?
 
+ahoramos peso en el momento de hacer el codigo y mas facil
+
 - ¿Qué ventaja tiene usar pygame.time.get_ticks()?
+
+devuelve el tiempo en milisegundos lo cual es una forma mas facil de medirlo
 ---
 ## 💻 Código base: `animacion_direccional.py`
 
