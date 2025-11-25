@@ -2,7 +2,7 @@ import pygame
 pygame.init()
 
 # --- Configuración ---
-ANCHO, ALTO = 1300, 620
+ANCHO, ALTO = 1300, 630
 VENTANA = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Animación Direccional - Sprite Sheet")
 
@@ -92,7 +92,7 @@ while ejecutando:
             direccion = "derecha"
             moviendo = True
         
-        # 🔥 EVITAR QUE SALGA DE LA PANTALLA 🔥
+        # EVITAR QUE SALGA DE LA PANTALLA 
     x = max(0, min(x, ANCHO - anim_walk[direccion][0].get_width()))
     y = max(0, min(y, ALTO - anim_walk[direccion][0].get_height()))
 
